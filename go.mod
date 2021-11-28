@@ -4,7 +4,6 @@ go 1.15
 
 require (
 	tele.com/genproto v0.0.0
-	tele.com/money v0.0.0
 	cloud.google.com/go v0.40.0
 	contrib.go.opencensus.io/exporter/jaeger v0.2.0
 	contrib.go.opencensus.io/exporter/stackdriver v0.5.0
@@ -25,5 +24,4 @@ require (
 
 replace (
    tele.com/genproto => ./genproto
-   tele.com/money => ./money
 )
