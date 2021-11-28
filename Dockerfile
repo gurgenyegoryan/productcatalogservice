@@ -21,7 +21,7 @@ RUN GRPC_HEALTH_PROBE_VERSION=v0.4.6 && \
 
 WORKDIR /src
 WORKDIR /src
-COPY --from=compiler /productcatalogservice ./server
+COPY --from=compiler /go/bin/productcatalogservice ./server
 COPY products.json .
 
 EXPOSE 3550
