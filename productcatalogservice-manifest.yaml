@@ -27,8 +27,8 @@ spec:
         env:
         - name: PORT
           value: "3550"
-        # - name: DISABLE_STATS
-        #   value: "true"
+        - name: DISABLE_STATS
+          value: "true"
         - name: DISABLE_TRACING
           value: "true"
         - name: DISABLE_PROFILER
@@ -48,3 +48,20 @@ spec:
           limits:
             cpu: 200m
             memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: productcatalogservice
+  namespace: dev
+  labels:
+    app: productcatalogservice
+    project: telecom-project
+spec:
+  type: ClusterIP
+  selector:
+    app: productcatalogservice
+  ports:
+  - name: rpc
+    port: 80
+    targetPort: rpc 
